@@ -73,6 +73,10 @@ class Nullable(ClickHouseTypeEngine):
         self.nested_type = to_instance(nested_type)
         super(Nullable, self).__init__()
 
+    def __repr__(self):
+        nested_type_str = f'{self.nested_type.__module__}.{self.nested_type!r}'
+        return f'Nullable({nested_type_str})'
+
 
 class UUID(String):
     __visit_name__ = 'uuid'
