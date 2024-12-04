@@ -63,7 +63,7 @@ def compare_mat_view(autogen_context, upgrade_ops, schemas):
     else:
         logger.info('Using ".inner" for materialized views storage by default')
 
-    all_mat_views = set(dialect.get_view_names(connection))
+    all_mat_views = set()#set(dialect.get_view_names(connection))
 
     metadata_mat_views = metadata.info.setdefault('mat_views', set())
 
