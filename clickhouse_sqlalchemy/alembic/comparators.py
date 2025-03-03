@@ -66,7 +66,7 @@ def compare_mat_view(autogen_context, upgrade_ops, schemas):
     all_mat_views = set(
         view_name
         for view_name in dialect.get_view_names(connection)
-        if not view_name.startswith('v_')
+        if not view_name.startswith('v_') and not view_name.startswith('view_')
     )
 
     metadata_mat_views = metadata.info.setdefault('mat_views', set())
